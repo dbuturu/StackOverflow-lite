@@ -1,8 +1,95 @@
 <section class="card" id="01">
-    <h2 class="heading">Eveniet doloribus exercitationem voluptate accusamus natus eum.</h2>
-    <p class="question">Animi repellat magnam earum id doloremque dolorem incidunt quis similique autem, corporis at perspiciatis iste.</p>
+    <input class="heading" value="Eveniet doloribus exercitationem voluptate accusamus natus eum." disabled>
+    <textarea class="question field" cols="50" rows="10" disabled>
+        Animi repellat magnam earum id doloremque dolorem incidunt quis similique autem, corporis at perspiciatis iste.
+    </textarea>
     <br>
-    <input type="button" id="post_edit" class="button" value="edit">
-    <input type="button" id="post_save" class="button hidden" value="save">
-    <input type="button" id="post_delete" class="button" value="delete">
+    <input type="button" class="button" id="post_edit" class="button" value="edit">
+    <input type="button" class="button hidden" id="post_save" class="button hidden" value="save">
+    <input type="button" class="button" id="post_delete" class="button" value="delete">
 </section>
+<div>
+    <section class="answer" id="1">
+        <div class="part">
+            <div>
+                <label for="heading">Title<input type="text" name="heading" class="heading" value="Error consectetur corrupti beatae, ratione porro quo ipsa magni inventore neque exercitationem!" disabled></label>
+                <label for="answer">Answer<textarea class="field" name="answer" id="answer" cols="50" rows="10" disabled>
+                    Sunt quasi illo vel reiciendis adipisci odit quod, hic blanditiis nisi facilis qui eos, delectus dolorum incidunt fugiat!
+                    Dolore repudiandae doloremque optio!
+                </textarea></label>
+                <input type="button" class="button" value="edit" id="answer_edit">
+                <input type="button" class="button hidden" value="save" id="answer_save">
+                <input type="button" class="button" value="delete" id="answer_delete">
+            </div>
+            <fieldset class="arrow">
+                <label for="arrow"></label>
+                <input type="radio" class="vote" name="arrow" id="up_vote" title="&#8679;">
+                <input type="radio" class="vote" name="arrow" id="down_vote" value="&#8681;">
+            </fieldset>
+        </div>
+        <div class="comment" id="1">
+            <label for="heading">Title<input type="text" name="heading" class="heading" value="Omnis rerum facilis ducimus eaque soluta magni perferendis maiores fuga neque voluptates?" disabled></label>
+            <label for="comment">Comment
+                <textarea class="field" name="comment" id="comment" cols="50" rows="10" disabled>
+                    Beatae, officiis non explicabo autem ducimus quaerat omnis sed voluptatum, corporis deserunt quod architecto rem quisquam
+                    corrupti dolore reprehenderit quasi unde ipsum.
+                </textarea>
+            </label>
+            <input type="button" class="button" value="edit" id="comment_edit">
+            <input type="button" class="button hidden" value="save" id="comment_save">
+            <input type="button" class="button" value="delete" id="comment_delete">
+        </div>
+        <div class="comment" id="new">
+            <label for="heading">Title<input type="text" name="heading" class="heading" ></label>
+            <label for="comment">Comment<textarea class="field" name="comment" id="comment" cols="50" rows="10" ></textarea></label>
+            <input type="button" class="button" value="save" id="comment_save">
+        </div>
+    </section>
+<section class="answer accepted" id="2">
+        <div class="part">
+            <p class="accept">&#10004</p>
+            <div>
+                <label for="heading">Title<input type="text" name="heading" class="heading" value="Aperiam, quisquam! Qui, ipsa. Earum blanditiis libero incidunt, tenetur vitae placeat qui." disabled></label>
+                <label for="answer">Answer<textarea class="field" name="answer" id="answer" cols="50" rows="10" disabled>
+                    Aperiam ratione dicta sequi magnam est, fuga obcaecati deserunt nobis! Mollitia enim repellat saepe dolor dolorem, fugit nulla repellendus animi! Odio, porro?
+                </textarea></label>
+                <input type="button" class="button" value="edit" id="answer_edit">
+                <input type="button" class="button hidden" value="save" id="answer_save">
+                <input type="button" class="button" value="delete" id="answer_delete">
+            </div>
+            <fieldset class="arrow">
+                <label for="arrow"></label>
+                <input type="radio" class="vote" name="arrow" id="up_vote">&#8679;</input>
+                <input type="radio" class="vote" name="arrow" id="down_vote">&#8681;</input>
+            </fieldset>
+        </div>
+    </section>
+    <section class="answer" id="3">
+        <div class="part">
+            <div>
+                <label for="heading">Title<input type="text" name="heading" class="heading" value="Omnis rerum facilis ducimus eaque soluta magni perferendis maiores fuga neque voluptates?" disabled></label>
+                <label for="answer">Answer
+                    <textarea class="field" name="answer" id="answer" cols="50" rows="10" disabled>
+                        Beatae, officiis non explicabo autem ducimus quaerat omnis sed voluptatum, corporis deserunt quod architecto rem quisquam
+                        corrupti dolore reprehenderit quasi unde ipsum.
+                    </textarea>
+                </label>
+                <input type="button" class="button" value="edit" id="answer_edit">
+                <input type="button" class="button hidden" value="save" id="answer_save">
+                <input type="button" class="button" value="delete" id="answer_delete">
+            </div>
+            <fieldset class="arrow">
+                <label for="arrow"></label>
+                <input type="radio" class="vote" name="arrow" id="up_vote">&#8679;</input>
+                <input type="radio" class="vote" name="arrow" id="down_vote">&#8681;</input>
+            </fieldset>
+        </div>
+    </section>
+    <section class="answer" id="new">
+        <div>
+            <label for="heading">Title<input type="text" name="heading" class="heading" ></label>
+            <label for="answer">Answer<textarea class="field" name="answer" id="answer" cols="50" rows="10" ></textarea></label>
+            <input type="button" class="button" value="save" id="answer_save">
+        </div>
+    </section>
+</div>
