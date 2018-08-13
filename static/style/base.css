@@ -1,26 +1,28 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
-    background: #0000001a;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: #dddddd;
 }
 
 #main {
     height: 100vh;
-    width: 100;
+    width: 100%;
     margin: 0;
     display: grid;
-    grid-template-rows: minmax(10vh, 20vh) minmax(43vh, 8fr) minmax(47vh, 9fr) minmax(max-content, max-content);
+    grid-template-rows: minmax(5rem, 5vh) auto minmax(min-content, max-content);
     grid-template-columns:1fr 7fr 1fr;
-    grid-template-areas: "title title title" ". body ." ". body ." "footer footer footer";
+    grid-template-areas: "title title title" ". body ." "footer footer footer";
     grid-gap: 1px;
 }
 
-.title>h1 {
-    margin: 0 10px 
+.title>h1,
+#search {
+    margin: 1rem 1rem
 }
 
-.title {
+.title,
+.search {
     display: inline-block;
     margin: 0 10px
 }
@@ -34,9 +36,15 @@ body {
     grid-area: title
 }
 
+.search{
+    height: 1rem;
+    float: right
+}
+
 #body {
-    background: #ffffff;
-    padding: 2.5rem 10vw;
+    background: #eeeeee;
+    padding: 2rem 5vw;
+    height: auto;
     grid-gap: 1rem;
     z-index: 2;
     grid-area: body
@@ -52,22 +60,45 @@ body {
     box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, .2),0 -6px 20px 0 rgba(0, 0, 0, .19);
 }
 
-output {
+.card{
+    background-color: #ffffff;
+    padding: .5rem 5vw 2rem;
+    margin: 0 0 2rem 0;
+    z-index: 10;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .19);
+}
+
+.error {
     display: block;
     height: 2rem;
+    border: 0;
 }
 
 .field,
-output,
-select {
+.select {
     display: block;
-    min-width: 11rem;
     max-width: 40vw;
     padding: 0.5rem;
     margin: 8px 0;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box
+}
+
+.field_long{
+    display: block;
+    width: 385px;
+    max-width: 40vw;
+    padding: 0.5rem;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box
+}
+
+.field:disabled{
+    border: none;
+    background-color: #ffffff
 }
 
 .button {
@@ -117,3 +148,5 @@ select {
     -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
     box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24)
 }
+
+.hidden{display: none}
