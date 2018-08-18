@@ -1,4 +1,3 @@
-
 from app.api.comment import model
 
 
@@ -17,26 +16,24 @@ class TestComment():
 
     def test_comment_post(self):
         data = self.comment
-        comment = model.CommentModel()
+        comment = model.CommentModel({})
         message = '{ message: "comment added successful"}'
         assert message == comment.create(data)
 
     def test_comment_get(self):
         data = self.comment
-        comment = model.CommentModel()
+        comment = model.CommentModel({})
         assert data == comment.read(data.get('id'))
 
     def test_comment_put(self):
         data = self.comment
-        comment = model.CommentModel()
+        comment = model.CommentModel({})
         message = '{ message: "comment updated successful"}'
         assert message == comment.update(
-            data.get('id'),
-            'title',
-            'file not found')
+            data.get('id'))
 
     def test_comment_delete(self):
         data = self.comment
-        comment = model.CommentModel()
+        comment = model.CommentModel({})
         message = '{ message: "comment deleted successful"}'
         assert message == comment.delete(data.get('id'))

@@ -2,17 +2,26 @@
 
 
 class UserModel:
+
+    def __init__(self, users: dict):
+        self.users = users
+
     def sign_up(self, user: dict):
-        return ''
+        self.users.update({user.get('username'): user})
+        return '{ message: "User added successful"}'
 
     def sign_in(self, username: str, password: str):
-        return ''
+        self.users.fromkeys(password) == username
+        return '{ message: "User singin successful"}'
 
     def read(self, username: str):
-        return ''
+        return self.users.get(username)
 
-    def update(self,  var: str, value: str):
-        return ''
+    def update(self, user):
+        if user.get('username'):
+            self.users.update({user.get('username'): user})
+            return '{ message: "User updated successful"}'
 
-    def delete(self,  username: str):
-        return ''
+    def delete(self, username: str):
+        self.users.pop(username)
+        return '{ message: "User deleted successful"}'

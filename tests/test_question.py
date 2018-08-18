@@ -18,26 +18,23 @@ class TestQuestion():
 
     def test_question_post(self):
         data = self.question
-        question = model.QuestionModel()
+        question = model.QuestionModel({})
         message = '{ message: "question added successful"}'
         assert message == question.create(data)
 
     def test_question_get(self):
         data = self.question
-        question = model.QuestionModel()
+        question = model.QuestionModel({})
         assert data == question.read(data.get('id'))
 
     def test_question_put(self):
         data = self.question
-        question = model.QuestionModel()
+        question = model.QuestionModel({})
         message = '{ message: "question updated successful"}'
-        assert message == question.update(
-            data.get('id'),
-            'title',
-            'non integer to integer convertion')
+        assert message == question.update(data)
 
     def test_question_delete(self):
         data = self.question
-        question = model.QuestionModel()
+        question = model.QuestionModel({})
         message = '{ message: "question deleted successful"}'
         assert message == question.delete(data)

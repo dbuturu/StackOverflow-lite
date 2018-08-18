@@ -2,7 +2,7 @@
 from app.api.user import model
 
 
-class TestUser():
+class TestUser:
     @classmethod
     def setup_class(self):
         self.user = {
@@ -17,14 +17,14 @@ class TestUser():
 
     def test_user_post(self):
         data = self.user
-        user = model.UserModel()
+        user = model.UserModel({})
         expected_message = '{ message: "User added successful"}'
         message = user.sign_up(data)
         assert expected_message == message
 
     def test_user_get(self):
         data = self.user
-        user = model.UserModel()
+        user = model.UserModel({})
         username = data.get('username')
         password = data.get('password')
         message = '{ message: "User singin successful"}'
@@ -32,12 +32,12 @@ class TestUser():
         assert data == user.read(data.get('username'))
 
     def test_user_put(self):
-        user = model.UserModel()
-        message = '{ message: "User updated successful"}'
-        assert message == user.update('username', 'bolt')
+        user = model.UserModel({})
+        message: str = '{ message: "User updated successful"}'
+        assert message == user.update('username', 'bingo')
 
     def test_user_delete(self):
         data = self.user
-        user = model.UserModel()
+        user = model.UserModel({})
         message = '{ message: "User deleted successful"}'
         assert message == user.delete(data.get('username'))

@@ -1,13 +1,25 @@
 
 class AnswerModel():
+    def __init__(self, answers: dict):
+        self.answers = answers
+
     def create(self, answer):
-        return ''
+        self.answers.append({answer.get('id'): answer})
+        return '{ message: "answer added successful"}'
 
-    def read(self, id):
-        return ''
+    def read(self, question_id):
+        answer = [
+            answer for answer in self.answers
+            if answer["question_id"] == question_id
+        ]
+        if answer:
+            return answer
 
-    def update(self, id, var, value):
-        return ''
+    def update(self, answer):
+        if answer.get('id'):
+            self.answers.append({answer.get('id'): answer})
+            return '{ message: "answer updated successful"}'
 
     def delete(self, id):
-        return ''
+        self.answers.pop(id)
+        return '{ message: "answer deleted successful"}'
