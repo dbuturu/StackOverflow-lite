@@ -53,3 +53,18 @@ def get_all_question():
             questions["answer"] = len(answer.read(questions["id"]))
         return jsonify({"questions": question.read_all()})
     abort(404)
+
+
+@mod.route('/question', methods=["POST"])
+def post_question():
+    if not request.json or not request.json['title']:
+        abort(400)
+    new_question = {
+        'id': question_list[-1]['id'] + 1,
+        'title': request.json['title'],
+        'description': request.json['description'],
+        'time': "time.time()",
+        "answer": 0}
+    question.add_question(new_question)
+    return jsonify({'question': new_question})
+
