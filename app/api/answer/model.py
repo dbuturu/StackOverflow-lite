@@ -4,7 +4,7 @@ class AnswerModel():
         self.answers = answers
 
     def create(self, answer):
-        self.answers.append({answer.get('id'): answer})
+        self.answers.update({answer.get('id'): answer})
         return '{ message: "answer added successful"}'
 
     def read(self, question_id):

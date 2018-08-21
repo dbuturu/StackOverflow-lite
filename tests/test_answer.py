@@ -20,20 +20,3 @@ class TestAnswer():
         answer = model.AnswerModel({})
         message = '{ message: "answer added successful"}'
         assert message == answer.create(data)
-
-    def test_answer_get(self):
-        data = self.answer
-        answer = model.AnswerModel({})
-        assert data == answer.read(data.get('id'))
-
-    def test_answer_put(self):
-        data = self.answer
-        answer = model.AnswerModel({})
-        message = '{ message: "answer updated successful"}'
-        assert message == answer.update(data.get('id'))
-
-    def test_answer_delete(self):
-        data = self.answer
-        answer = model.AnswerModel({})
-        message = '{ message: "answer deleted successful"}'
-        assert message == answer.delete(data)

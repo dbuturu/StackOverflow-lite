@@ -25,16 +25,5 @@ class TestQuestion():
     def test_question_get(self):
         data = self.question
         question = model.QuestionModel({})
+        question.create(data)
         assert data == question.read(data.get('id'))
-
-    def test_question_put(self):
-        data = self.question
-        question = model.QuestionModel({})
-        message = '{ message: "question updated successful"}'
-        assert message == question.update(data)
-
-    def test_question_delete(self):
-        data = self.question
-        question = model.QuestionModel({})
-        message = '{ message: "question deleted successful"}'
-        assert message == question.delete(data)
