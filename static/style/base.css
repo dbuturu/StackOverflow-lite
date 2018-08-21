@@ -11,9 +11,9 @@ body {
     width: 100%;
     margin: 0;
     display: grid;
-    grid-template-rows: minmax(5rem, 5vh) auto minmax(min-content, max-content);
+    grid-template-rows: minmax(5rem, 5vh) minmax(2.5rem, 2.5vh) auto minmax(min-content, max-content);
     grid-template-columns:1fr 7fr 1fr;
-    grid-template-areas: "title title title" ". body ." "footer footer footer";
+    grid-template-areas: "title title title" "nav nav nav " ". body ." "footer footer footer";
     grid-gap: 1px;
 }
 
@@ -40,6 +40,27 @@ body {
 .search{
     height: 1rem;
     float: right
+}
+
+.nav{
+    padding-top: .5rem;
+    grid-area: nav;
+    z-index: 6;
+    background-color: hsla(207, 100%, 50%, 0.836);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2),
+    0 6px 20px 0 rgba(0, 0, 0, .19);
+}
+
+.nav>ul,
+.links{
+    display: inline;
+}
+
+.links>a{
+    text-transform: uppercase;
+    color: #000000dd;
+    margin: .5rem 1rem;
+    text-decoration:none
 }
 
 #body {
