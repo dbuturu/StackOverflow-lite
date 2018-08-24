@@ -1,8 +1,9 @@
 
 from app.api.user import model
+from unittest import TestCase
 
 
-class TestUser:
+class TestUser(TestCase):
     @classmethod
     def setup_class(cls):
         cls.user = {
@@ -29,8 +30,8 @@ class TestUser:
         username = data.get('username')
         password = data.get('password')
         message = '{ message: "User singin successful"}'
-        assert message == user.sign_in(username, password)
-        assert data == user.read(data.get('username'))
+        self.assertEquals(message, user.sign_in(username, password))
+        self.assertEquals(data, user.read(data.get('username')))
 
     def test_user_put(self):
         data = self.user
@@ -41,12 +42,12 @@ class TestUser:
         }
         user = model.UserModel({})
         user.sign_up(data)
-        message: str = '{ message: "User updated successful"}'
-        assert message == user.update(update)
+        message = '{ message: "User updated successful"}'
+        self.assertEquals(message, user.update(update))
 
     def test_user_delete(self):
         data = self.user
         user = model.UserModel({})
         user.sign_up(data)
         message = '{ message: "User deleted successful"}'
-        assert message == user.delete(data.get('username'))
+        self.assertEquals(message, user.delete(data.get('username')))

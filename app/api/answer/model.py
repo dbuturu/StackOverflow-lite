@@ -1,5 +1,5 @@
 
-class AnswerModel():
+class AnswerModel:
     def __init__(self, answers: dict):
         self.answers = answers
 
@@ -17,7 +17,7 @@ class AnswerModel():
 
     def update(self, answer):
         if answer.get('id'):
-            self.answers.append({answer.get('id'): answer})
+            self.answers.update({answer.get('id'): answer})
             return '{ message: "answer updated successful"}'
 
     def delete(self, id):

@@ -1,8 +1,9 @@
 
 from app.api.question import model
+from unittest import TestCase
 
 
-class TestQuestion():
+class TestQuestion(TestCase):
     @classmethod
     def setup_class(self):
         self.question = {
@@ -20,10 +21,10 @@ class TestQuestion():
         data = self.question
         question = model.QuestionModel({})
         message = '{ message: "question added successful"}'
-        assert message == question.create(data)
+        self.assertEquals(message, question.create(data))
 
     def test_question_get(self):
         data = self.question
         question = model.QuestionModel({})
         question.create(data)
-        assert data == question.read(data.get('id'))
+        self.assertEquals(data, question.read(data.get('id')))

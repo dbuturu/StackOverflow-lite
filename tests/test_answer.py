@@ -1,8 +1,9 @@
 
 from app.api.answer import model
+from unittest import TestCase
 
 
-class TestAnswer():
+class TestAnswer(TestCase):
     @classmethod
     def setup_class(cls):
         cls.answer = {
@@ -19,4 +20,4 @@ class TestAnswer():
         data = self.answer
         answer = model.AnswerModel({})
         message = '{ message: "answer added successful"}'
-        assert message == answer.create(data)
+        self.assertEquals(message, answer.create(data))
